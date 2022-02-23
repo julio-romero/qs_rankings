@@ -17,7 +17,7 @@ def lectura(excel):
     df_qs_21 = pd.read_excel(excel, sheet_name='2021')
 
     limit = 100
-    
+
     df_qs_11 = df_qs_11.head(limit)
     df_qs_12 = df_qs_12.head(limit)
     df_qs_13 = df_qs_13.head(limit)
@@ -33,6 +33,7 @@ def lectura(excel):
     df = pd.concat([df_qs_11, df_qs_12, df_qs_13, df_qs_14, df_qs_15,
                     df_qs_16, df_qs_17, df_qs_18, df_qs_19, df_qs_20, df_qs_21])
     return df
+
 
 def archivo_limpio(file):
     '''
@@ -68,5 +69,21 @@ def archivo_limpio(file):
         df['International Students'].median)
     # Limpiar el overall
     df['Overall Score'] = df['Overall Score'].fillna(df['Overall Score'].mean)
-    df = df.replace('601+',int(601))
+    df = df.replace('601+', int(601))
+    return df
+
+
+def leer_subjects(path):
+    import pandas as pd
+    with open('./src/areas.txt', 'r') as f:
+        areas = f.readlines()
+    df = pd.DataFrame()
+    for i in range(len(areas)):
+        try:
+            df = pd.concat(
+                [df, pd.read_excel(path, sheet_name=areas[i].replace('\n', ''))])
+        except ValueError:
+            print(
+                "La hoja ", areas[i], " no fue encontrada, checa el excel o el areas.txt")
+
     return df
