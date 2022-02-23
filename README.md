@@ -1,4 +1,5 @@
 # Reto QS Rankings
+```bash
 .
 ├── README.md
 ├── data
@@ -18,3 +19,4 @@
 └── requirements.txt
 
 6 directories, 10 files
+```
