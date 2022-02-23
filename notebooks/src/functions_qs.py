@@ -72,7 +72,6 @@ def archivo_limpio(file):
     df = df.replace('601+', int(601))
     return df
 
-
 def leer_subjects(path):
     import pandas as pd
     with open('./src/areas.txt', 'r') as f:
@@ -80,10 +79,13 @@ def leer_subjects(path):
     df = pd.DataFrame()
     for i in range(len(areas)):
         try:
+            nuevo = pd.read_excel(path, sheet_name=areas[i].replace('\n', ''))
+            nuevo = nuevo.sample(100)
             df = pd.concat(
-                [df, pd.read_excel(path, sheet_name=areas[i].replace('\n', ''))])
+                [df, nuevo])
         except ValueError:
             print(
                 "La hoja ", areas[i], " no fue encontrada, checa el excel o el areas.txt")
 
     return df
+
