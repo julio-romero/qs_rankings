@@ -15,7 +15,9 @@ def lectura(excel):
     df_qs_19 = pd.read_excel(excel, sheet_name='2019')
     df_qs_20 = pd.read_excel(excel, sheet_name='2020')
     df_qs_21 = pd.read_excel(excel, sheet_name='2021')
+
     limit = 100
+    
     df_qs_11 = df_qs_11.head(limit)
     df_qs_12 = df_qs_12.head(limit)
     df_qs_13 = df_qs_13.head(limit)
@@ -31,7 +33,6 @@ def lectura(excel):
     df = pd.concat([df_qs_11, df_qs_12, df_qs_13, df_qs_14, df_qs_15,
                     df_qs_16, df_qs_17, df_qs_18, df_qs_19, df_qs_20, df_qs_21])
     return df
-
 
 def archivo_limpio(file):
     '''

@@ -1,16 +1,11 @@
 # Reto QS Rankings
-
-```bash
 .
 ├── README.md
 ├── data
 │   ├── processed
-│   │   └── QS_WUR.xlsx
+│   │   └── qs_wur.csv
 │   └── raw
-│       ├── QS WUR 2011-2022.xlsx
-│       ├── QS by Subjects 2014-2021.xlsx
-│       ├── THE By Subject 2011-2020.xlsx
-│       └── THE WUR 2011-2022.xlsx
+│       └── QS WUR 2011-2022.xlsx
 ├── notebooks
 │   ├── 00-exploracion.ipynb
 │   ├── 01-limpieza.ipynb
@@ -22,5 +17,4 @@
 │       └── functions.py
 └── requirements.txt
 
-6 directories, 13 files
-```
+6 directories, 10 files
