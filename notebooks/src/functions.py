@@ -68,4 +68,5 @@ def archivo_limpio(file):
         df['International Students'].median)
     # Limpiar el overall
     df['Overall Score'] = df['Overall Score'].fillna(df['Overall Score'].mean)
+    df = df.replace('601+',int(601))
     return df
