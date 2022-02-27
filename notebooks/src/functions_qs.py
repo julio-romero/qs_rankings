@@ -16,7 +16,7 @@ def lectura(excel):
     df_qs_20 = pd.read_excel(excel, sheet_name='2020')
     df_qs_21 = pd.read_excel(excel, sheet_name='2021')
 
-    limit = 100
+    limit = 300
 
     df_qs_11 = df_qs_11.head(limit)
     df_qs_12 = df_qs_12.head(limit)
@@ -41,7 +41,11 @@ def archivo_limpio(file):
     Esta funcion limpia el archivo, ademas de que crea el data frame
     '''
     import pandas as pd
-    df = lectura(file)
+    try:
+        df = lectura(file)
+    except FileNotFoundError:
+        print('Error en la funcion')
+        exit
     # Limpiar los rangos
     df['Rank'] = df['Rank'].fillna(method='ffill')
     df['O_Rank'] = df['O_Rank'].fillna(method='ffill')
