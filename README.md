@@ -5,26 +5,17 @@
 ├── README.md
 ├── data
 │   ├── img
-│   │   └── diferencia.jpg
 │   ├── processed
-│   │   ├── qs_wur.csv
-│   │   ├── qs_wur.xlsx
-│   │   ├── qs_wur2.xlsx
-│   │   ├── subjects.xlsx
-│   │   └── unisnames.xlsx
 │   └── raw
 │       ├── QS WUR 2011-2022.xlsx
 │       ├── QS by Subjects 2014-2021.xlsx
-│       └── unis.csv
-├── notebooks
-│   ├── 00-analisis_qs_wur.ipynb
-│   └── src
-│       ├── __pycache__
-│       │   ├── functions.cpython-310.pyc
-│       │   ├── functions_qs.cpython-310.pyc
-│       │   └── lectura.cpython-310.pyc
-│       └── functions.py
-└── requirements.yml
+│       └── THE By Subject 2011-2020.xlsx
+├── environment.yaml
+└── notebooks
+    ├── 00-analisis_qs_wur.ipynb
+    ├── 01-analisis_qs_subjects.ipynb
+    ├── 03-analisis_udelosA_qs.ipynb
+    └── 04-analisis_the_subjects.ipynb
 
-7 directories, 16 files
+5 directories, 9 files
 ```
