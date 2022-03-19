@@ -4,3 +4,4 @@ __pycache__
 *.jpg
 .ipynb_checkpoints
 *.svg
+*.png
